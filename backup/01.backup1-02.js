@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 /**
  * 1. JSX 表达式 表达式就是 变量 常量 操作符混合在一起的组合
  * 表达式是可以计算的，而且 肯定会有一个返回值
- * jsx更想JS
+ * jsx更像JS
  * class => className for => htmlFor
  */
 
