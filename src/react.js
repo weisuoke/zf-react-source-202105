@@ -1,4 +1,5 @@
 import { wrapToVdom } from "./utils";
+import { Component } from './Component'
 
 /**
  *
@@ -27,7 +28,8 @@ function createElement(type, config, children) {
 }
 
 const React = {
-  createElement
+  createElement,
+  Component
 }
 
 export default React
