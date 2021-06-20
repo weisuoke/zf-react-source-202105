@@ -19,6 +19,8 @@ function createDOM(vdom) {
   let dom;  // 获取真实 DOM 元素
   if (type === REACT_TEXT) {  // 如果是一个文本元素，就创建一个文本节点
     dom = document.createTextNode(props.content)
+  } else if(typeof type === 'function'){
+    return mountFunctionComponent(vdom);
   } else {
     dom = document.createElement(type); // 原生DOM类型
   }
@@ -35,6 +37,12 @@ function createDOM(vdom) {
   // vdom.dom = dom
 
   return dom
+}
+
+function mountFunctionComponent(vdom) {
+  let { type, props } = vdom;
+  let renderVdom = type(props)
+  return createDOM(renderVdom);
 }
 
 function reconcileChildren(childrenVdom, parentDOM) {
